@@ -13,4 +13,4 @@ gm:
 
 gmc: 
 	make gm
-	git checkout -
+	git checkout -   

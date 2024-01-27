@@ -3,7 +3,7 @@ import { useState } from "react";
 
 export const useNavigation = () => {
   const [open, setOpen] = useState<boolean>(false);
-  const [active, setActive] = useState<string>('');
+  const [active, setActive] = useState<string>('');   
   const [selected, setSelected] = useState<any>('');
   const router = useRouter();
   const params = useParams();

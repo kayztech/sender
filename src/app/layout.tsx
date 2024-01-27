@@ -1,16 +1,21 @@
-
-import "./globals.scss";
-
-
+"use client";
+import { AppWrapper } from "@/context";
+import { Toaster } from "sonner";
+import './globals.scss';
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang="en">
-      <body >Layout</body>
+    <html>
+      <body>
+        <AppWrapper>
+          {children}
+        </AppWrapper>
+        <Toaster richColors position="top-right" />
+      </body>
     </html>
-  );
+  )
 }
