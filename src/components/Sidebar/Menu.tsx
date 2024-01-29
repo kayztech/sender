@@ -9,10 +9,13 @@ export default function SidebarMenu({ menu = [] }: {
 }) {
 
   const { pathname } = useNavigation()
+
+   //this is the component for each individual item  
+
   return <div className='grid w-full gap-2'>
     {menu.map((item: MenuItem, index: number) => (
       <Link key={index} href={item.path}
-        className={`flex items-center justify-start px-3 py-1 rounded-lg gap-2 hover:bg-gray-100 ${pathname === item.path ? "bg-gray-100" : ""} transition w-full`}
+        className={`flex items-center justify-start px-3 py-1 rounded-lg gap-2 hover:bg-gray-100 ${pathname === item.path ? "bg-slate-100" : ""} transition w-full`}
       >
         {item.icon}
         {item.title}

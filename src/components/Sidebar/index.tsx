@@ -40,7 +40,7 @@ export const menu: MenuItem[] = [
 export default function Sidebar() {
   const { user } = useAppContext()
 
-  return <div className='flex flex-col min-h-screen py-6 px-6 overflow-hidden w-[360px] border-r'>
+  return <div className='flex flex-col min-h-screen py-6 px-6 overflow-hidden w-[460px] border-r bg-white'>
     <div className='mb-4'>
       <UserItem />
     </div>

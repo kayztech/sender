@@ -18,7 +18,7 @@ export default function Home() {
       <Button color="primary" label="New campaign" onClick={() => setShow(true)} />
     </header>
     <main className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-      <Card title="Campaigns" count={0}>
+      <Card title="Campaigns" count={15}>
         <Email />
       </Card>
       <Card title="Subscribers" count={0}>

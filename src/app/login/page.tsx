@@ -59,6 +59,33 @@ export default function Login() {
     }
   }
 
+  const signUp = async () => {
+    const { email, password } = data;
+    if (email.length < 4 || password.length < 4) return alert("Please enter a valid email address & password length must be at least 4 characters.")
+    if (!isValidEmail(email)) return alert("Please enter a valid email address");
+    try {
+      setLoading(true);
+
+      const { data, error } = await supabase
+        .auth
+        .signUp({
+          email,
+          password
+        })
+
+      if (error) return setError('Sorry impossible to sign up.');
+
+      if (data) {
+        login();
+      }
+
+    } catch (error: any) {
+      throw new Error(error)
+    } finally {
+      setLoading(false);
+    }
+  }
+
   return <div className="bg-gray-100 w-full h-screen py-8">
     <div className="bg-white rounded-lg shadow-sm border w-[300px] mx-auto px-6 py-4 grid gap-4">
       <div className='grid'>
@@ -84,6 +111,9 @@ export default function Login() {
       </div>}
       <div>
         <Button loading={loading} label="Login" onClick={login} />
+      </div>
+      <div>
+        <Button loading={loading} label="Sign Up" onClick={login} />
       </div>
     </div>
   </div>
